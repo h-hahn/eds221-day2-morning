@@ -115,5 +115,5 @@ class(fish_size)
 str(fish_size)
 typeof(fish_size)
 
-fish_size[ , 2] 
+fish_size[ , 2]
 ```
