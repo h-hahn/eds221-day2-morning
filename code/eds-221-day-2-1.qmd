@@ -119,3 +119,32 @@ fish_size[ , 2]
 ```
 
 change document
+
+```{r}
+urchins <- list(color = "blue", values = c(1,2,3), meal = c("lunch", "dinner", "dessert"), cost = 5L)
+
+urchins_list <- urchins[2]
+
+urchins_vector <- urchins[[2]]
+```
+
+```{r}
+urchins$values
+```
+
+```{r}
+sample1 <- c(1,2,3,4,5,3,2,4,1)
+sample2 <- c(3,4,1,6,7,4,8,6,10,11)
+
+ttest_example <- t.test(sample1, sample2)
+
+ttest_example
+```
+
+```{r}
+class(ttest_example)
+
+ttest_example$p.value
+```
+
+Mean size for trees in Site A is greater than the mean size in site B (...my statistical summary, `r ttest_example$p.value`)
