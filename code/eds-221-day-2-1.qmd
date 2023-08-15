@@ -98,3 +98,10 @@ yoda <- 4
 trees[i]
 trees[yoda]
 ```
+
+```{r}
+# reassign value based on position
+trees[3] <- "OAK"
+
+trees
+```
