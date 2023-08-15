@@ -2,25 +2,99 @@
 title: "eds-221-day-2-1"
 format: html
 editor: visual
+execute: 
+  warning: false
 ---
 
-## Quarto
+## Making and indexing data in R
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+### Vectors
 
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+making vectors
 
 ```{r}
-1 + 1
-```
+dogs <- c("teddy", "khora", "waffle", "bacon", "tito")
 
-You can add options to executable code like this
+# check class of dogs
+typeof(dogs)
+class(dogs)
+```
 
 ```{r}
-#| echo: false
-2 * 2
+my_breakfast <- c("waffles", 2, TRUE, "coffee")
+
+typeof(my_breakfast)
+class(my_breakfast)
+
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
+```{r}
+weights <- c(50, 60, 25, 10, 60)
+
+typeof(weights)
+class(weights)
+
+# use L to store as integers
+weights_integer <- c(50L, 60L, 25L, 10L, 60L)
+
+typeof(weights_integer)
+class(weights_integer)
+```
+
+```{r}
+is.numeric(weights_integer)
+```
+
+```{r}
+zipcodes <- c(93105, 93514, 93101, 93401)
+
+class(zipcodes)
+
+# use as. family of functions to recast data classes
+# use is. family of functions to ASK what class something is
+zipcodes_chr <- as.character(zipcodes)
+
+class(zipcodes_chr)
+```
+
+## Create a vector with names elements
+
+```{r}
+dog_food <- c(teddy = "purina", khora = "alpo", waffle = "fancy feast", bacon = "bluediamond", tito = "farmer's dog")
+
+test <- c(cat = 4, dog = 10, elephant = 11)
+class(test)
+```
+
+```{r}
+dog_food["khora"]
+dog_food[2]
+# R uses 1-index, first element of index is giving 1
+# Python and JavaScript use 0-indexing
+```
+
+Access ranges of values in a vector
+
+Use : to refer to a range (low : high)
+
+```{r}
+trees <- c("ponderosa", "lodgepole", "jeffrey", "sugar", "white", "bristlecone")
+
+trees[3]
+
+trees[3:5]
+```
+
+## Warm-up for for loops
+
+```{r}
+i <- 3
+trees[i]
+```
+
+```{r}
+i <- seq(1:3) # same thing as seq(from = 1, to = 3)
+yoda <- 4
+trees[i]
+trees[yoda]
+```
